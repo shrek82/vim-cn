@@ -368,3 +368,35 @@ tips
  
 文件开始:shift + g
 文件结束:G
+
+---------------------------------------------------------
+windows手动安装vim-ruby
+（不是手动直接git还没试）
+直接从git@github.com:vim-ruby/vim-ruby.git
+运行bin目录下的....rb文件
+windows选择1，然后将输出的文件夹地址内所有文件拷贝到vim72目录下
+1、修改vimfiles/ftplugin/ruby.vim 加入 
+map <F5> :!ruby % <CR>  
+这样，按F5就会在vim上面弹出一个dos窗口.. 
+
+修改vimfiles/indent/ruby.vim 
+加入： 
+setlocal expandtab  
+setlocal autowrite  
+setlocal tabstop=2 shiftwidth=2 softtabstop=2  
+setlocal autoindent  
+这个windows没找到.没去管
+
+2\End自动补全 
+下载http://www.vim.org/scripts/download_script.php?src_id=1053 (ruby-macros.vim)
+放到VIM72文件夹内 
+编辑_vimrc,在前面加上： 
+Vimscript代码  
+source $VIMRUNTIME/ruby-macros.vim  
+
+3.关键字和自定义变量补全 
+ctrol + N 
+---------------------------------------------------------
+macos安装vim-ruby
+git载到了/User/Zhaojiangang/.vim/bundle下，按vim-ruby wike配置即可
+
